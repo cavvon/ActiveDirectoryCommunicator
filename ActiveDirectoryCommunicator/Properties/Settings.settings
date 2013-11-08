@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ActiveDirectoryCommunicator.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="HumanUsersGroup" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ALL Heartland</Value>
+    </Setting>
+    <Setting Name="Domain" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">hai-mke.heartlandfunds.com</Value>
+    </Setting>
+    <Setting Name="Container" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CN=Users,DC=hai-mke,DC=heartlandfunds,DC=com</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
