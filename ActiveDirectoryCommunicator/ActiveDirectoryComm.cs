@@ -32,6 +32,16 @@ namespace ActiveDirectoryCommunicator
             return new UserCollection(GetAllUsersRaw());
         }
 
+        /// <summary>
+        /// Gets all users in AD without querying for user groups
+        /// Much faster, but limits available functions
+        /// </summary>
+        /// <returns></returns>
+        public UserCollection GetAllUsersSimple()
+        {
+            return new UserCollection(GetAllUsersRaw(), true);
+        }
+
         public GroupCollection GetAllGroups()
         {
             return new GroupCollection(GetAllGroupsRaw());

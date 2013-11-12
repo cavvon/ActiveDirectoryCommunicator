@@ -21,24 +21,42 @@ namespace ActiveDirectoryCommunicator
             Phone = phone;
         }
 
-        public User(UserPrincipal userP)
+        public User(UserPrincipal userP) : this(userP, false)
+        {
+        }
+
+        /// <summary>
+        /// Simple allows for construction to skip querying for security and distribution groups
+        /// which is much faster
+        /// </summary>
+        /// <param name="userP"></param>
+        /// <param name="simple"></param>
+        public User(UserPrincipal userP, bool simple)
         {
             Name = userP.DisplayName;
             Guid = userP.Guid;
             LoginName = userP.SamAccountName;
             Email = userP.EmailAddress;
             Phone = userP.VoiceTelephoneNumber;
-            try
+            if (simple)
             {
-                SecurityGroups = PrincipalCollection.PrincipalListToNames(userP.GetAuthorizationGroups().Cast<Principal>().ToList());
-                DistributionGroups = PrincipalCollection.PrincipalListToNames(
-                    GroupCollection.GetEmailGroups(userP.GetGroups().Cast<Principal>().ToList()));
+                SecurityGroups = new List<string>() { "Must call User constructor with simple equal to false" };
+                DistributionGroups = new List<string>() { "Must call User constructor with simple equal to false;" };
             }
-            catch (PrincipalOperationException e)
+            else
             {
-                // User does not have privledges to view groups.
-                SecurityGroups = new List<string>() { "Authentication Error" };
-                DistributionGroups = new List<string>() { "Authentication Error" };
+                try
+                {
+                    SecurityGroups = PrincipalCollection.PrincipalListToNames(userP.GetAuthorizationGroups().Cast<Principal>().ToList());
+                    DistributionGroups = PrincipalCollection.PrincipalListToNames(
+                        GroupCollection.GetEmailGroups(userP.GetGroups().Cast<Principal>().ToList()));
+                }
+                catch (PrincipalOperationException)
+                {
+                    // User does not have privledges to view groups.
+                    SecurityGroups = new List<string>() { "Authentication Error" };
+                    DistributionGroups = new List<string>() { "Authentication Error" };
+                }
             }
         }
     }

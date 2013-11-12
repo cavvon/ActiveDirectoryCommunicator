@@ -27,6 +27,15 @@ namespace ActiveDirectoryCommunicator
             }
         }
 
+        public UserCollection(List<UserPrincipal> princList, bool simple)
+            : this()
+        {
+            foreach (UserPrincipal principal in princList)
+            {
+                Add(new User(principal, simple));
+            }
+        }
+
         /// <summary>
         /// Gets all human users
         /// </summary>
