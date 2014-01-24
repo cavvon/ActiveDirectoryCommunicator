@@ -9,7 +9,7 @@
       <Value Profile="(Default)">hai-mke.heartlandfunds.com</Value>
     </Setting>
     <Setting Name="Container" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">CN=Users,DC=hai-mke,DC=heartlandfunds,DC=com</Value>
+      <Value Profile="(Default)">DC=hai-mke,DC=heartlandfunds,DC=com</Value>
     </Setting>
   </Settings>
 </SettingsFile>

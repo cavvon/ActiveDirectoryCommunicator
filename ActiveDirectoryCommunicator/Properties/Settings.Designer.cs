@@ -43,7 +43,7 @@ namespace ActiveDirectoryCommunicator.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("CN=Users,DC=hai-mke,DC=heartlandfunds,DC=com")]
+        [global::System.Configuration.DefaultSettingValueAttribute("DC=hai-mke,DC=heartlandfunds,DC=com")]
         public string Container {
             get {
                 return ((string)(this["Container"]));
