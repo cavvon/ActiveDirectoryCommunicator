@@ -25,7 +25,7 @@ namespace ActiveDirectoryCommunicator.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("ALL Heartland")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string HumanUsersGroup {
             get {
                 return ((string)(this["HumanUsersGroup"]));
@@ -34,7 +34,7 @@ namespace ActiveDirectoryCommunicator.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("hai-mke.heartlandfunds.com")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string Domain {
             get {
                 return ((string)(this["Domain"]));
@@ -43,7 +43,7 @@ namespace ActiveDirectoryCommunicator.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("DC=hai-mke,DC=heartlandfunds,DC=com")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string Container {
             get {
                 return ((string)(this["Container"]));
